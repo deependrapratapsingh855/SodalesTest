@@ -1,0 +1,15 @@
+PROCEDURE "createIncident"( 
+    IN ID INTEGER,
+    IN NAME NVARCHAR(100)
+)
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   --READS SQL DATA 
+   AS
+BEGIN
+   /*************************************
+       Write your procedure logic
+   *************************************/
+   INSERT INTO INC_T_INCDT Values(:ID,:NAME);
+END
